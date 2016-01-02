@@ -3,7 +3,7 @@ define(['firebase','backbonefire','models/activity'],function(FireBase,BackboneF
 	 
 	 var  DataCollection  = Backbone.Firebase.Collection.extend({
 		   model: ActivityModel,
-		   url: "https://vlk-firebase.firebaseio.com"
+		   url: "https://vlk-production.firebaseio.com"
 
 		 });
 	
