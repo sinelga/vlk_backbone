@@ -18,7 +18,6 @@ define(['jquery', 'underscore', 'backbone', 'text!../../templates/index.html', '
 				this.listenTo(this.collection, 'add', this.addOne);				
 				this.headerView = HeaderView;
 				this.footerView = FooterView;
-//				this.selectedView =SelectedView;
 				
 			},
 			render: function() {
