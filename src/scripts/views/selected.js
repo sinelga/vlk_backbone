@@ -20,15 +20,17 @@ define(['jquery', 'underscore', 'backbone', 'text!../../templates/selected.html'
 				  },
 				  
 				   save_client: function(event) {
-					   console.log(this.model.title);
-					   
+//					   this.$el.html(this.name.val() );
 					   event.preventDefault();   
 					   var vlkclientscollection = ClientsCollection;
 					   var today = new Date();
-					   vlkclientscollection.create({date:today.toString(),title:"title",name:this.name.val(),email:this.email.val(),phone:this.phone.val()});
+					   vlkclientscollection.create({date:today.toString(),title:this.model.get('title'),name:this.name.val(),email:this.email.val(),phone:this.phone.val()});
+					   
+					   
 					   this.name.val('');
 					   this.email.val('');
 					   this.phone.val('');
+					   
 	    
 					  }	
 			
