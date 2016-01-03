@@ -1,5 +1,5 @@
-define(['jquery', 'underscore', 'backbone', 'text!../../templates/selected.html','channel','collections/clients'],
-	function($, _, Backbone, SelectedTemplate,channel,ClientsCollection) {
+define(['jquery', 'underscore', 'backbone', 'text!../../templates/selected.html','channel','collections/clients','views/savedinfo','models/savedinfomodel'],
+	function($, _, Backbone, SelectedTemplate,channel,ClientsCollection,SavedInfoView,SavedInfoModel) {
 		'use strict';		
 		var SelectedView = Backbone.View.extend({
 			template: _.template(SelectedTemplate),
@@ -20,18 +20,26 @@ define(['jquery', 'underscore', 'backbone', 'text!../../templates/selected.html'
 				  },
 				  
 				   save_client: function(event) {
-//					   this.$el.html(this.name.val() );
-					   event.preventDefault();   
+					   event.preventDefault();
+					   
+					   if ((this.name.val() !== "" && this.email.val() !== "") ||  (this.name.val() !== "" &&  this.phone.val() !== "")) {
+					   var sevedinfoobj = new SavedInfoModel({name:this.name.val(),email:this.email.val(),phone:this.phone.val()});					 					   
+					   var savedinfoview = new SavedInfoView({model: sevedinfoobj});
+					   
+						 this.list= $('#selected');
+						 this.list.empty();
+						 this.list.append(savedinfoview.render().el);
+					   
 					   var vlkclientscollection = ClientsCollection;
 					   var today = new Date();
 					   vlkclientscollection.create({date:today.toString(),title:this.model.get('title'),name:this.name.val(),email:this.email.val(),phone:this.phone.val()});
-					   
-					   
+					   					   
 					   this.name.val('');
 					   this.email.val('');
 					   this.phone.val('');
 					   
-	    
+				   }
+					   	    
 					  }	
 			
 		});
