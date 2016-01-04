@@ -7,9 +7,9 @@ define(['jquery', 'underscore', 'backbone', 'text!../../templates/index.html', '
 			el: $('.container'),
 			template: _.template(IndexTemplate),
 
-			events: {
-				'click .logo': 'showAlert'
-			},
+//			events: {
+//				'click .logo': 'showAlert'
+//			},
 			initialize: function() {
 				
 				channel.on('select_activity',this.activity_was_selected);
@@ -31,9 +31,9 @@ define(['jquery', 'underscore', 'backbone', 'text!../../templates/index.html', '
 
 				
 			},	
-			showAlert: function() {
-				alert('Hell Yeah!');
-			},
+//			showAlert: function() {
+//				alert('Hell Yeah!');
+//			},
 			 addOne: function(todo) {
 				    var view = new MenuItemView({model: todo});
 				    this.list.append(view.render().el);
