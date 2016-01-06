@@ -17,7 +17,7 @@ define(['jquery', 'underscore', 'backbone', 'views/index'], function($, _, Backb
 		var router = new Router();
 		Backbone.emulateHTTP = true;
 		Backbone.history.start();
-		$(document).on('click', 'a:not([data-bypass])', function(event) {
+		$(document).on('click', 'a:not([data-bypass])', function() {
 			var href = $(this).attr('href');
 			var protocol = this.protocol + '//';
 			if (href.slice(protocol.length) !== protocol) {
