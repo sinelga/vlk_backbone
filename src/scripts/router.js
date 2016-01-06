@@ -21,7 +21,7 @@ define(['jquery', 'underscore', 'backbone', 'views/index'], function($, _, Backb
 			var href = $(this).attr('href');
 			var protocol = this.protocol + '//';
 			if (href.slice(protocol.length) !== protocol) {
-				event.preventDefault();
+//				event.preventDefault();
 				router.navigate(href, true);
 			}
 		});
