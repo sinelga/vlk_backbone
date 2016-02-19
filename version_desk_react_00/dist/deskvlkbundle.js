@@ -30,20 +30,18 @@ webpackJsonp([0],{
 	  childRoutes: [{
 	    path: '/',
 	    component: __webpack_require__(217),
-	    childRoutes: [
-	      //      require('./routes/Details'),
-	      //      require('./routes/NotFound'),
-	      //      require('./routes/Sale'),
-	      //      require('./routes/Apartment'),
-	      ////      require('./routes/Course'),
-	      //      require('./routes/Grades'),
-	      //      require('./routes/Messages')
-	      //      require('./routes/Profile')
-	    ]
+	    childRoutes: [__webpack_require__(470)]
 	  }]
 	}; /*eslint-disable no-unused-vars */
 
 
+	//      require('./routes/NotFound'),
+	//      require('./routes/Sale'),
+	//      require('./routes/Apartment'),
+	////      require('./routes/Course'),
+	//      require('./routes/Grades'),
+	//      require('./routes/Messages')
+	//      require('./routes/Profile')
 	(0, _reactDom.render)(_react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, routes: rootRoute }), document.getElementById('content'));
 
 /***/ },
@@ -81,6 +79,10 @@ webpackJsonp([0],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	//import Firebase from 'firebase'
+
+	//var baseRef = new Firebase('https://vlk-firebase.firebaseio.com');
+
 	var App = function (_React$Component) {
 		_inherits(App, _React$Component);
 
@@ -105,11 +107,51 @@ webpackJsonp([0],{
 				//		global.OPERATORS_OBJS =this.state.data;
 			}
 		}, {
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+
+				console.log("componentWillMount App ");
+				//		console.log(baseRef)
+				//		var vvdata = [{}]
+				//		baseRef.on("value", function(snapshot) {
+				//			   // Alerts "San Francisco"
+				//			console.log("le" +snapshot.val()[1])
+				//			var vobj
+				//			snapshot.forEach(function(vdata) {
+				////				console.log("title--> "+vdata.val().title)
+				//				vobj = {
+				//					id: vdata.val().id, title: vdata.val().title, details: vdata.val().details
+				//				}
+				////				this.setState({data: vobj })
+				////				vvdata.push(vobj)
+				//			});
+				//			
+				//			
+				////			data.push(snapshot.val())
+				//			this.setState({data: vobj })
+				//			
+				//		}.bind(this));
+				//		
+				//		console.log(vvdata.length)
+
+				//		this.setState({data: vvdata })
+
+				//		baseRef.map(function(item) {
+				//			
+				//			console.log(item)
+				//			
+				//		});
+				//		convertToPlainArray(baseRef)
+
+				//		this.bindAsArray(baseRef,"vlk");
+
+				//		global.OPERATORS_OBJS =this.state.data;
+			}
+		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 
-				//		console.log("mount App ")
-
+				console.log("mount App ");
 			}
 		}, {
 			key: 'componentWillReceiveProps',
@@ -299,7 +341,7 @@ webpackJsonp([0],{
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -312,6 +354,10 @@ webpackJsonp([0],{
 
 	var _reactBootstrap = __webpack_require__(218);
 
+	var _firebase = __webpack_require__(469);
+
+	var _firebase2 = _interopRequireDefault(_firebase);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -320,73 +366,183 @@ webpackJsonp([0],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var baseRef = new _firebase2.default('https://vlk-firebase.firebaseio.com');
+
 	var Dashboard = function (_React$Component) {
-	  _inherits(Dashboard, _React$Component);
+		_inherits(Dashboard, _React$Component);
 
-	  function Dashboard() {
-	    _classCallCheck(this, Dashboard);
+		function Dashboard(props) {
+			_classCallCheck(this, Dashboard);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Dashboard).apply(this, arguments));
-	  }
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Dashboard).call(this, props));
 
-	  _createClass(Dashboard, [{
-	    key: 'render',
-	    value: function render() {
+			_this.state = {
+				data: []
 
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'h2',
-	          null,
-	          'Переводы консультации'
-	        ),
-	        _react2.default.createElement(
-	          _reactBootstrap.Row,
-	          null,
-	          _react2.default.createElement(
-	            _reactBootstrap.Col,
-	            { xs: 6, md: 4 },
-	            _react2.default.createElement(_reactBootstrap.Image, { src: '/img/logo.jpg', thumbnail: true, responsive: true })
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.Col,
-	            { xs: 12, md: 8 },
-	            _react2.default.createElement(
-	              'p',
-	              { className: 'cvbigtitle' },
-	              'SUOMI'
-	            ),
-	            _react2.default.createElement(
-	              'p',
-	              { className: 'name' },
-	              'Александр Волков'
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'h3',
-	          null,
-	          'Languages'
-	        ),
-	        _react2.default.createElement(
-	          _reactBootstrap.Row,
-	          null,
-	          _react2.default.createElement(
-	            _reactBootstrap.Col,
-	            { xs: 3, md: 2 },
-	            _react2.default.createElement(_reactBootstrap.Image, { src: '/img/programming-languages-1.jpg', thumbnail: true, responsive: true })
-	          ),
-	          _react2.default.createElement(_reactBootstrap.Col, { xs: 12, md: 8 })
-	        )
-	      );
-	    }
-	  }]);
+			};
 
-	  return Dashboard;
+			return _this;
+		}
+
+		_createClass(Dashboard, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+
+				console.log("mount Dashboard ");
+
+				var vvdata = [];
+				baseRef.on("value", function (snapshot) {
+
+					snapshot.forEach(function (vdata) {
+
+						//				if (typeof vdata.val().id !=  "undefined") {	
+						var vobj = {
+							id: vdata.val().id, title: vdata.val().title, details: vdata.val().details
+						};
+						vvdata.push(vobj);
+						//			}
+					});
+
+					this.setState({ data: vvdata });
+				}.bind(this));
+			}
+		}, {
+			key: 'componentWillReceiveProps',
+			value: function componentWillReceiveProps() {
+				console.log("Dashboard  receive props");
+				console.log(this.props.data);
+				//		this.setState({data: this.s })
+
+				//		this.props.data.forEach(function(ddata) {
+				//			
+				//			console.log(ddata)
+				//			
+				//		});
+			}
+		}, {
+			key: 'componentWillUpdate',
+			value: function componentWillUpdate(nextProps, nextState) {
+
+				//		console.log("Dashboard WillUpdate"+nextProps)
+				//		console.log("Dashboard WillUpdate"+nextState)
+
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+
+				var rentobjs = this.state.data;
+				var links = [];
+				//	
+				console.log(rentobjs);
+
+				rentobjs.forEach(function (obj) {
+					console.log(obj.title);
+					var permlink = "/" + obj.id;
+					var title = obj.title;
+					var key = obj.id;
+					links.push(_react2.default.createElement(
+						_reactBootstrap.ListGroupItem,
+						null,
+						_react2.default.createElement(
+							_reactRouter.Link,
+							{ key: '' + key, to: permlink },
+							title,
+							' '
+						)
+					));
+				});
+
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'h2',
+						null,
+						'Переводы консультации'
+					),
+					_react2.default.createElement(
+						_reactBootstrap.Row,
+						null,
+						_react2.default.createElement(
+							_reactBootstrap.Col,
+							{ xs: 6, md: 4 },
+							_react2.default.createElement(_reactBootstrap.Image, { src: '/img/logo.jpg', thumbnail: true, responsive: true })
+						),
+						_react2.default.createElement(
+							_reactBootstrap.Col,
+							{ xs: 12, md: 8 },
+							_react2.default.createElement(
+								'p',
+								{ className: 'cvbigtitle' },
+								'SUOMI'
+							),
+							_react2.default.createElement(
+								'p',
+								{ className: 'name' },
+								'Александр Волков'
+							)
+						)
+					),
+					_react2.default.createElement(
+						_reactBootstrap.Row,
+						null,
+						_react2.default.createElement(
+							_reactBootstrap.Col,
+							{ xs: 6, md: 4 },
+							_react2.default.createElement(
+								_reactBootstrap.ListGroup,
+								null,
+								links,
+								' '
+							),
+							' '
+						),
+						_react2.default.createElement(
+							_reactBootstrap.Col,
+							{ xs: 12, md: 8 },
+							'lslslslslslssl'
+						)
+					)
+				);
+			}
+		}]);
+
+		return Dashboard;
 	}(_react2.default.Component);
 
 	exports.default = Dashboard;
+
+/***/ },
+
+/***/ 470:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = {
+			path: ':id',
+
+			//		  getChildRoutes(location, cb) {
+			//		    require.ensure([], (require) => {
+			//		      cb(null, [
+			//		        require('./routes/Details')
+			//	
+			//		      ])
+			//		    })
+			//		  },
+
+			getComponents: function getComponents(location, cb) {
+					__webpack_require__.e/* nsure */(1, function (require) {
+							cb(null, __webpack_require__(471));
+							//		        cb(null,{
+							//		        	chat: require('./components/Chat'),
+							//		        	main: require('./components/Details'),
+							//		        	objlist: require('./components/ObjList')
+							//		        })
+					});
+			}
+	};
 
 /***/ }
 
