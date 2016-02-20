@@ -242,18 +242,15 @@ webpackJsonp([0],{
 	  function GlobalNav(props, context) {
 	    _classCallCheck(this, GlobalNav);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(GlobalNav).call(this, props, context));
-
-	    _this.logOut = _this.logOut.bind(_this);
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(GlobalNav).call(this, props, context));
+	    //    this.logOut = this.logOut.bind(this)
 	  }
 
+	  //  logOut() {
+	  //    alert('log out')
+	  //  }
+
 	  _createClass(GlobalNav, [{
-	    key: 'logOut',
-	    value: function logOut() {
-	      alert('log out');
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var user = this.props.user;
@@ -301,21 +298,6 @@ webpackJsonp([0],{
 	            'Messages'
 	          ),
 	          ' '
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { style: { float: 'right' } },
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { style: styles.link, to: '/profile' },
-	            user.name
-	          ),
-	          ' ',
-	          _react2.default.createElement(
-	            'button',
-	            { onClick: this.logOut },
-	            'log out'
-	          )
 	        )
 	      );
 	    }
@@ -324,12 +306,12 @@ webpackJsonp([0],{
 	  return GlobalNav;
 	}(_react2.default.Component);
 
-	GlobalNav.defaultProps = {
-	  user: {
-	    id: 1,
-	    name: 'Ryan Florence'
-	  }
-	};
+	//GlobalNav.defaultProps = {
+	//  user: {
+	//    id: 1,
+	//    name: 'Ryan Florence'
+	//  }
+	//}
 
 	exports.default = GlobalNav;
 
@@ -388,19 +370,15 @@ webpackJsonp([0],{
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 
-				console.log("mount Dashboard ");
-
 				var vvdata = [];
 				baseRef.on("value", function (snapshot) {
 
 					snapshot.forEach(function (vdata) {
 
-						//				if (typeof vdata.val().id !=  "undefined") {	
 						var vobj = {
 							id: vdata.val().id, title: vdata.val().title, details: vdata.val().details
 						};
 						vvdata.push(vobj);
-						//			}
 					});
 
 					this.setState({ data: vvdata });
@@ -411,13 +389,6 @@ webpackJsonp([0],{
 			value: function componentWillReceiveProps() {
 				console.log("Dashboard  receive props");
 				console.log(this.props.data);
-				//		this.setState({data: this.s })
-
-				//		this.props.data.forEach(function(ddata) {
-				//			
-				//			console.log(ddata)
-				//			
-				//		});
 			}
 		}, {
 			key: 'componentWillUpdate',
@@ -428,16 +399,20 @@ webpackJsonp([0],{
 
 			}
 		}, {
+			key: 'componentWillUnmount',
+			value: function componentWillUnmount() {
+				console.log("Dashboard componentWillUnmount");
+				baseRef.off();
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 
 				var rentobjs = this.state.data;
 				var links = [];
-				//	
-				console.log(rentobjs);
 
 				rentobjs.forEach(function (obj) {
-					console.log(obj.title);
+
 					var permlink = "/" + obj.id;
 					var title = obj.title;
 					var key = obj.id;
@@ -498,11 +473,7 @@ webpackJsonp([0],{
 							),
 							' '
 						),
-						_react2.default.createElement(
-							_reactBootstrap.Col,
-							{ xs: 12, md: 8 },
-							'lslslslslslssl'
-						)
+						_react2.default.createElement(_reactBootstrap.Col, { xs: 12, md: 8 })
 					)
 				);
 			}
@@ -533,7 +504,7 @@ webpackJsonp([0],{
 			//		  },
 
 			getComponents: function getComponents(location, cb) {
-					__webpack_require__.e/* nsure */(1, function (require) {
+					__webpack_require__.e/* nsure */(1/* empty */, function (require) {
 							cb(null, __webpack_require__(471));
 							//		        cb(null,{
 							//		        	chat: require('./components/Chat'),

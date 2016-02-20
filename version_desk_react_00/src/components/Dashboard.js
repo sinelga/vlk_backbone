@@ -17,41 +17,29 @@ class Dashboard extends React.Component {
 	}    
 	
 	componentDidMount(){
-		
-		console.log("mount Dashboard ")
 
 		var vvdata = []
 		baseRef.on("value", function(snapshot) {
 			
 			snapshot.forEach(function(vdata) {
-				
-//				if (typeof vdata.val().id !=  "undefined") {	
-					var vobj = {
-						id: vdata.val().id, title: vdata.val().title, details: vdata.val().details
-					}
-					vvdata.push(vobj)	
-//			}
+	
+				var vobj = {
+					id: vdata.val().id, title: vdata.val().title, details: vdata.val().details
+				}
+				vvdata.push(vobj)	
 			
-		});
+			});
 
 			this.setState({data: vvdata })
 					
-	}.bind(this));
-		
-		
-		
+		}.bind(this));
+				
 	}
 	
 	componentWillReceiveProps(){
 		console.log("Dashboard  receive props")
 		console.log(this.props.data)
-//		this.setState({data: this.s })
-		
-//		this.props.data.forEach(function(ddata) {
-//			
-//			console.log(ddata)
-//			
-//		});
+
 		
 	}
 	componentWillUpdate(nextProps,nextState){
@@ -60,16 +48,20 @@ class Dashboard extends React.Component {
 //		console.log("Dashboard WillUpdate"+nextState)
 		
 	}
+	
+	 componentWillUnmount(){		 
+		console.log("Dashboard componentWillUnmount")
+		baseRef.off()	
+	 } 
+	
+	
 	render() {
 		
 	var rentobjs = this.state.data
 	var links = [];
-//	
-	console.log(rentobjs)
-	
 	
 	rentobjs.forEach(function(obj){
-		console.log(obj.title)
+		
 		var permlink = "/"+obj.id
 		var title =obj.title
 		var key = obj.id
@@ -88,13 +80,10 @@ class Dashboard extends React.Component {
       
       <Row>
     	<Col xs={6} md={4}><ListGroup>{links} </ListGroup> </Col>
-    	<Col xs={12} md={8}>lslslslslslssl</Col>
+    	<Col xs={12} md={8}></Col>
     	
       </Row>      
-      
-       
-      
-                
+                            
       </div>
     )
   }
