@@ -5,8 +5,10 @@ import ReactDOM from 'react-dom'
 //import DocumentMeta from 'react-document-meta'
 import Firebase from 'firebase'
 
-var baseRef = new Firebase('https://vlk-firebase.firebaseio.com');
-var baseRefClients = new Firebase('https://vlk-clients.firebaseio.com');
+//var baseRef = new Firebase('https://vlk-firebase.firebaseio.com');
+var baseRef = new Firebase('https://vlk-production.firebaseio.com');
+//var baseRefClients = new Firebase('https://vlk-clients.firebaseio.com');
+var baseRefClients = new Firebase('https://vlk-customers.firebaseio.com');
 var id
 
 

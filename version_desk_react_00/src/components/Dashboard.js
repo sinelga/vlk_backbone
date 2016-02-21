@@ -3,7 +3,8 @@ import { Link } from 'react-router'
 import {Grid,Image,Row,Col,ListGroup,ListGroupItem,Thumbnail} from 'react-bootstrap'
 import Firebase from 'firebase'
 
-var baseRef = new Firebase('https://vlk-firebase.firebaseio.com');
+//var baseRef = new Firebase('https://vlk-firebase.firebaseio.com');
+var baseRef = new Firebase('https://vlk-production.firebaseio.com');
 
 class Dashboard extends React.Component {
 
@@ -50,7 +51,7 @@ class Dashboard extends React.Component {
 	}
 	
 	 componentWillUnmount(){		 
-		console.log("Dashboard componentWillUnmount")
+//		console.log("Dashboard componentWillUnmount")
 		baseRef.off()	
 	 } 
 	
