@@ -3,10 +3,7 @@ import {Grid,Well} from 'react-bootstrap'
 import DocumentMeta from 'react-document-meta'
 import GlobalNav from './GlobalNav'
 import Dashboard from './Dashboard'
-//import Firebase from 'firebase'
 
-
-//var baseRef = new Firebase('https://vlk-firebase.firebaseio.com');
 
 class App extends React.Component {
 	constructor(props){

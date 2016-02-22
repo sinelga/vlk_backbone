@@ -38,8 +38,8 @@ class Dashboard extends React.Component {
 	}
 	
 	componentWillReceiveProps(){
-		console.log("Dashboard  receive props")
-		console.log(this.props.data)
+//		console.log("Dashboard  receive props")
+//		console.log(this.props.data)
 
 		
 	}
@@ -76,7 +76,7 @@ class Dashboard extends React.Component {
    
       <Row>
       	<Col xs={6} md={4}></Col> 
-  		<Col xs={12} md={8}><h2>Переводы консультации работа</h2></Col>
+  		<Col xs={12} md={8}><h2>Работа консультации переводы</h2></Col>
 		
   	  </Row> 
       

@@ -183,7 +183,7 @@ class Details extends React.Component {
       		<Input type="text" label="Имя" value={this.state.name} onChange={this.handleNameChange} placeholder="Введите Имя" />
       		<Input type="email" label="Е-маил" value={this.state.email} onChange={this.handleEmailChange} placeholder="Введите Е-маил" />
       		<Input type="phone" label="Телефон" value={this.state.phone} onChange={this.handlePhoneChange}  placeholder="Введите Телефон" />
-      		<Input type="textarea" label="Доп. информация" value={this.state.info} onChange={this.handleInfoChange} placeholder="Доп. информация" />		
+      		<Input type="textarea" label="Техт вашего сообщения" value={this.state.info} onChange={this.handleInfoChange} placeholder="Техт вашего сообщения" />		
       		<ButtonInput bsStyle="primary" onClick={this.handleSubmit} value="Введите данные" />      		
       	</form>
     	
