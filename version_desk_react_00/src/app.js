@@ -9,6 +9,7 @@ const rootRoute = {
     path: '/',
     component: require('./components/App'),
     childRoutes: [
+      require('./routes/Blog'),            
       require('./routes/Details'),
 //      require('./routes/NotFound'),
 //      require('./routes/Sale'),

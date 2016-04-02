@@ -1,1 +1,281 @@
-webpackJsonp([1],{236:function(e,t,n){"use strict";function a(e){return e&&e.__esModule?e:{"default":e}}function l(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function o(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}var s,r=function(){function e(e,t){for(var n=0;n<t.length;n++){var a=t[n];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(e,a.key,a)}}return function(t,n,a){return n&&e(t.prototype,n),a&&e(t,a),t}}(),h=n(1),u=a(h),d=n(70),c=n(56),f=n(15),m=(a(f),n(84)),p=a(m),b=new p["default"]("https://vlk-production.firebaseio.com"),v=new p["default"]("https://vlk-customers.firebaseio.com"),y=function(e){function t(e){l(this,t);var n=i(this,Object.getPrototypeOf(t).call(this,e));return n.state={data:{},name:"",email:"",phone:"",info:"",alertVisible:!1,contactInserted:!1},n.handleSubmit=n.handleSubmit.bind(n),n.handleNameChange=n.handleNameChange.bind(n),n.handleEmailChange=n.handleEmailChange.bind(n),n.handlePhoneChange=n.handlePhoneChange.bind(n),n.handleInfoChange=n.handleInfoChange.bind(n),n.handleAlertDismiss=n.handleAlertDismiss.bind(n),n.handleAlertShow=n.handleAlertShow.bind(n),n.handleContactNotInserted=n.handleContactNotInserted.bind(n),n.handleContactInserted=n.handleContactInserted.bind(n),n}return o(t,e),r(t,[{key:"handleAlertDismiss",value:function(){this.setState({alertVisible:!1})}},{key:"handleAlertShow",value:function(){this.setState({alertVisible:!0})}},{key:"handleContactNotInserted",value:function(){this.setState({contactInserted:!1})}},{key:"handleContactInserted",value:function(){this.setState({contactInserted:!0})}},{key:"handleReturn",value:function(){c.browserHistory.push("/")}},{key:"componentWillMount",value:function(){}},{key:"componentDidMount",value:function(){console.log("componentDidMount details",this.props.params),s=this.props.params.id;var e={};b.orderByChild("id").equalTo(s).on("value",function(t){t.forEach(function(t){e={id:t.val().id,title:t.val().title,details:t.val().details}}),this.setState({data:e})}.bind(this))}},{key:"componentWillReceiveProps",value:function(){}},{key:"componentWillUpdate",value:function(e){}},{key:"componentDidUpdate",value:function(e){}},{key:"handleSubmit",value:function(e){if(e.preventDefault(),""===this.state.name||""===this.state.email&&""===this.state.phone)this.handleAlertShow();else{var t={name:this.state.name.trim(),email:this.state.email.trim(),phone:this.state.phone.trim(),info:this.state.info.trim(),title:this.state.data.title.trim()},n=(new Date).toLocaleString(),a=v.child(n);a.set(t),this.state.name="",this.state.email="",this.state.phone="",this.state.info="",this.handleContactInserted(),setTimeout(this.handleReturn,7e3)}}},{key:"handleNameChange",value:function(e){this.setState({name:e.target.value})}},{key:"handleEmailChange",value:function(e){this.setState({email:e.target.value})}},{key:"handlePhoneChange",value:function(e){this.setState({phone:e.target.value})}},{key:"handleInfoChange",value:function(e){this.setState({info:e.target.value})}},{key:"componentWillUnmount",value:function(){b.off(),v.off()}},{key:"render",value:function(){var e=this.state.data,t="/img/activity/"+e.id+".jpg",n=[];return this.state.alertVisible&&n.push(u["default"].createElement(d.Alert,{bsStyle:"danger",onDismiss:this.handleAlertDismiss,dismissAfter:4e3},"Необходимо ввести имя и номер телефона или емаил!")),this.state.contactInserted&&n.push(u["default"].createElement(d.Alert,{bsStyle:"danger",onDismiss:this.handleContactNotInserted,dismissAfter:4e3},"Ваши данные успешно введены!")),u["default"].createElement("div",null,u["default"].createElement(d.Button,{onClick:this.handleReturn,bsStyle:"primary",bsSize:"large",className:"pull-right"},"Возврат"),u["default"].createElement(d.Well,{bsSize:"large"},u["default"].createElement("h2",null," ",e.title)),u["default"].createElement(d.Row,null,u["default"].createElement(d.Col,{xs:6,md:4},u["default"].createElement(d.Image,{src:t,thumbnail:!0,responsive:!0})),u["default"].createElement(d.Col,{xs:12,md:8},n,u["default"].createElement("h3",null,"Оставьте свои данные: "),u["default"].createElement("form",null,u["default"].createElement(d.Input,{type:"text",label:"Имя",value:this.state.name,onChange:this.handleNameChange,placeholder:"Введите Имя"}),u["default"].createElement(d.Input,{type:"email",label:"Е-маил",value:this.state.email,onChange:this.handleEmailChange,placeholder:"Введите Е-маил"}),u["default"].createElement(d.Input,{type:"phone",label:"Телефон",value:this.state.phone,onChange:this.handlePhoneChange,placeholder:"Введите Телефон"}),u["default"].createElement(d.Input,{type:"textarea",label:"Техт вашего сообщения",value:this.state.info,onChange:this.handleInfoChange,placeholder:"Техт вашего сообщения"}),u["default"].createElement(d.ButtonInput,{bsStyle:"primary",onClick:this.handleSubmit,value:"Введите данные"})))))}}]),t}(u["default"].Component);e.exports=y}});
+webpackJsonp([1],{
+
+/***/ 480:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(218);
+
+	var _reactRouter = __webpack_require__(160);
+
+	var _reactDom = __webpack_require__(159);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _firebase = __webpack_require__(478);
+
+	var _firebase2 = _interopRequireDefault(_firebase);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	//import DocumentMeta from 'react-document-meta'
+
+
+	//var baseRef = new Firebase('https://vlk-firebase.firebaseio.com');
+	var baseRef = new _firebase2.default('https://vlk-production.firebaseio.com');
+	//var baseRefClients = new Firebase('https://vlk-clients.firebaseio.com');
+	var baseRefClients = new _firebase2.default('https://vlk-customers.firebaseio.com');
+	var id;
+
+	var Details = function (_React$Component) {
+		_inherits(Details, _React$Component);
+
+		function Details(props) {
+			_classCallCheck(this, Details);
+
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Details).call(this, props));
+
+			_this.state = {
+				data: {},
+				name: '',
+				email: '',
+				phone: '',
+				info: '',
+				alertVisible: false,
+				contactInserted: false
+			};
+
+			_this.handleSubmit = _this.handleSubmit.bind(_this);
+			_this.handleNameChange = _this.handleNameChange.bind(_this);
+			_this.handleEmailChange = _this.handleEmailChange.bind(_this);
+			_this.handlePhoneChange = _this.handlePhoneChange.bind(_this);
+			_this.handleInfoChange = _this.handleInfoChange.bind(_this);
+
+			_this.handleAlertDismiss = _this.handleAlertDismiss.bind(_this);
+			_this.handleAlertShow = _this.handleAlertShow.bind(_this);
+
+			_this.handleContactNotInserted = _this.handleContactNotInserted.bind(_this);
+			_this.handleContactInserted = _this.handleContactInserted.bind(_this);
+			return _this;
+		}
+
+		_createClass(Details, [{
+			key: 'handleAlertDismiss',
+			value: function handleAlertDismiss() {
+				this.setState({ alertVisible: false });
+			}
+		}, {
+			key: 'handleAlertShow',
+			value: function handleAlertShow() {
+				this.setState({ alertVisible: true });
+			}
+		}, {
+			key: 'handleContactNotInserted',
+			value: function handleContactNotInserted() {
+				this.setState({ contactInserted: false });
+			}
+		}, {
+			key: 'handleContactInserted',
+			value: function handleContactInserted() {
+				this.setState({ contactInserted: true });
+			}
+		}, {
+			key: 'handleReturn',
+			value: function handleReturn() {
+				_reactRouter.browserHistory.push('/');
+			}
+		}, {
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+				//		console.log("Willmount Details",this.props.params.id)
+
+			}
+		}, {
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+
+				console.log("componentDidMount details", this.props.params);
+				id = this.props.params.id;
+				var obj = {};
+				baseRef.orderByChild("id").equalTo(id).on("value", function (snapshot) {
+
+					snapshot.forEach(function (snapshot) {
+
+						obj = {
+							id: snapshot.val().id, title: snapshot.val().title, details: snapshot.val().details
+						};
+						return;
+					});
+					this.setState({ data: obj });
+				}.bind(this));
+			}
+		}, {
+			key: 'componentWillReceiveProps',
+			value: function componentWillReceiveProps() {
+				//		console.log("componentWillReceiveProps Details",this.props.params)
+
+			}
+		}, {
+			key: 'componentWillUpdate',
+			value: function componentWillUpdate(prevProps) {
+				//		console.log("componentWillUpdate")	
+			}
+		}, {
+			key: 'componentDidUpdate',
+			value: function componentDidUpdate(prevProps) {
+
+				//		console.log("componentDidUpdate")
+
+			}
+		}, {
+			key: 'handleSubmit',
+			value: function handleSubmit(e) {
+				e.preventDefault();
+
+				if (this.state.name !== '' && (this.state.email !== '' || this.state.phone !== '')) {
+
+					var clienttoinsert = { name: this.state.name.trim(), email: this.state.email.trim(), phone: this.state.phone.trim(), info: this.state.info.trim(), title: this.state.data.title.trim() };
+
+					var now = new Date().toLocaleString();
+					var clientRef = baseRefClients.child(now);
+					clientRef.set(clienttoinsert);
+					this.state.name = '';
+					this.state.email = '';
+					this.state.phone = '';
+					this.state.info = '';
+
+					this.handleContactInserted();
+					setTimeout(this.handleReturn, 7000);
+					//			this.handleReturn()
+				} else {
+
+						this.handleAlertShow();
+					}
+			}
+		}, {
+			key: 'handleNameChange',
+			value: function handleNameChange(e) {
+				this.setState({ name: e.target.value });
+			}
+		}, {
+			key: 'handleEmailChange',
+			value: function handleEmailChange(e) {
+				this.setState({ email: e.target.value });
+			}
+		}, {
+			key: 'handlePhoneChange',
+			value: function handlePhoneChange(e) {
+				this.setState({ phone: e.target.value });
+			}
+		}, {
+			key: 'handleInfoChange',
+			value: function handleInfoChange(e) {
+				this.setState({ info: e.target.value });
+			}
+		}, {
+			key: 'componentWillUnmount',
+			value: function componentWillUnmount() {
+
+				baseRef.off();
+				baseRefClients.off();
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+
+				var data = this.state.data;
+				var imgactivity = "/img/activity/" + data.id + ".jpg";
+
+				//	 
+				//	  const meta = {
+				//		      title: "data.Moto",
+				//	}
+				//	 
+				var alarm = [];
+				if (this.state.alertVisible) {
+
+					alarm.push(_react2.default.createElement(
+						_reactBootstrap.Alert,
+						{ bsStyle: 'danger', onDismiss: this.handleAlertDismiss, dismissAfter: 4000 },
+						'Необходимо ввести имя и номер телефона или емаил!'
+					));
+				}
+				if (this.state.contactInserted) {
+
+					alarm.push(_react2.default.createElement(
+						_reactBootstrap.Alert,
+						{ bsStyle: 'danger', onDismiss: this.handleContactNotInserted, dismissAfter: 4000 },
+						'Ваши данные успешно введены!'
+					));
+				}
+
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						_reactBootstrap.Button,
+						{ onClick: this.handleReturn, bsStyle: 'primary', bsSize: 'large', className: 'pull-right' },
+						'Возврат'
+					),
+					_react2.default.createElement(
+						_reactBootstrap.Well,
+						{ bsSize: 'large' },
+						_react2.default.createElement(
+							'h2',
+							null,
+							' ',
+							data.title
+						)
+					),
+					_react2.default.createElement(
+						_reactBootstrap.Row,
+						null,
+						_react2.default.createElement(
+							_reactBootstrap.Col,
+							{ xs: 6, md: 4 },
+							_react2.default.createElement(_reactBootstrap.Image, { src: imgactivity, thumbnail: true, responsive: true })
+						),
+						_react2.default.createElement(
+							_reactBootstrap.Col,
+							{ xs: 12, md: 8 },
+							alarm,
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Оставьте свои данные: '
+							),
+							_react2.default.createElement(
+								'form',
+								null,
+								_react2.default.createElement(_reactBootstrap.Input, { type: 'text', label: 'Имя', value: this.state.name, onChange: this.handleNameChange, placeholder: 'Введите Имя' }),
+								_react2.default.createElement(_reactBootstrap.Input, { type: 'email', label: 'Е-маил', value: this.state.email, onChange: this.handleEmailChange, placeholder: 'Введите Е-маил' }),
+								_react2.default.createElement(_reactBootstrap.Input, { type: 'phone', label: 'Телефон', value: this.state.phone, onChange: this.handlePhoneChange, placeholder: 'Введите Телефон' }),
+								_react2.default.createElement(_reactBootstrap.Input, { type: 'textarea', label: 'Техт вашего сообщения', value: this.state.info, onChange: this.handleInfoChange, placeholder: 'Техт вашего сообщения' }),
+								_react2.default.createElement(_reactBootstrap.ButtonInput, { bsStyle: 'primary', onClick: this.handleSubmit, value: 'Введите данные' })
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return Details;
+	}(_react2.default.Component);
+
+	module.exports = Details;
+
+/***/ }
+
+});
