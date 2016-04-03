@@ -152,7 +152,7 @@ webpackJsonp([7],{
 			key: 'render',
 			value: function render() {
 
-				var contents = this.state.mark.Contents;
+				//	var contents = this.state.mark.Contents
 
 				var meta = {};
 				meta = {
@@ -182,12 +182,6 @@ webpackJsonp([7],{
 							),
 							this.props.children || _react2.default.createElement(_BlogDashboard2.default, { data: this.state.data })
 						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ id: 'background' },
-						' ',
-						contents
 					)
 				);
 			}
@@ -278,7 +272,13 @@ webpackJsonp([7],{
 				if (Object.keys(this.state.data).length > 0) {
 
 					Object.getOwnPropertyNames(this.state.data).forEach(function (val, idx, array) {
-						//				  console.log(val + ' -> ' + this.state.data[val]);
+						//				  console.log(this.state.data[val]);
+						//				  console.log(idx);
+						//				  console.log(array);
+
+						var itemObj = this.state.data[val];
+
+						var visiblelink = itemObj[idx].Topic;
 						var key = val;
 						var outlink = '/blog/' + val;
 						htmlTableItems.push(_react2.default.createElement(
@@ -290,7 +290,7 @@ webpackJsonp([7],{
 								_react2.default.createElement(
 									_reactRouter.Link,
 									{ to: outlink },
-									val
+									visiblelink
 								)
 							)
 						));

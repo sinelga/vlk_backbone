@@ -118,7 +118,7 @@ webpackJsonp([5],{
 			value: function componentDidMount() {
 				//		console.log("Didmount blogItems",this.props.params)
 
-				this.loadajax('/en_US_programming_blog.json', false);
+				this.loadajax('/ru_RU_finland_blog.json', false);
 				this.loadajax('/www/' + site + '/blog/' + topic + '/' + stitlesplit + '/' + stitle + '.json', true);
 			}
 		}, {
@@ -133,9 +133,6 @@ webpackJsonp([5],{
 		}, {
 			key: 'componentDidUpdate',
 			value: function componentDidUpdate(prevProps) {
-
-				//		console.log("Details componentDidUpdate")
-				//		console.log("BlogItemDetails componentDidUpdate",prevProps.params,this.props.params)
 
 				var oldId = prevProps.params.stitle;
 				var newId = this.props.params.stitle;
@@ -166,19 +163,13 @@ webpackJsonp([5],{
 					title: topic + " " + title,
 					description: topic + " " + title + "details"
 				};
-				var contents = this.state.mark.Contents;
+				//	var contents = this.state.mark.Contents
 				//	console.log(this.state.data)
 				return _react2.default.createElement(
 					'div',
 					null,
 					_react2.default.createElement(_reactDocumentMeta2.default, meta),
-					this.props.children || _react2.default.createElement(_BlogItemDetailsDashboard2.default, { data: this.state.data, topic: this.props.params.topic, stitle: this.props.params.stitle }),
-					_react2.default.createElement(
-						'div',
-						{ id: 'background' },
-						' ',
-						contents
-					)
+					this.props.children || _react2.default.createElement(_BlogItemDetailsDashboard2.default, { data: this.state.data, topic: this.props.params.topic, stitle: this.props.params.stitle })
 				);
 			}
 		}]);

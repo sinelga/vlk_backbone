@@ -83,7 +83,7 @@ class BlogItemDetails extends React.Component {
 	componentDidMount(){
 //		console.log("Didmount blogItems",this.props.params)
 		
-		 this.loadajax('/en_US_programming_blog.json',false)			 
+		 this.loadajax('/ru_RU_finland_blog.json',false)			 
 		 this.loadajax('/www/'+site+'/blog/'+topic+'/'+stitlesplit+'/'+stitle+'.json',true)
 						
 	}
@@ -101,8 +101,7 @@ class BlogItemDetails extends React.Component {
 	
 	componentDidUpdate(prevProps) {
 		
-//		console.log("Details componentDidUpdate")
-//		console.log("BlogItemDetails componentDidUpdate",prevProps.params,this.props.params)
+
 		
 		let oldId = prevProps.params.stitle
 		let newId = this.props.params.stitle
@@ -136,14 +135,14 @@ class BlogItemDetails extends React.Component {
 			title: topic+" "+title,
 			description: topic+" "+title+"details"
 		}  
-	var contents = this.state.mark.Contents
+//	var contents = this.state.mark.Contents
 //	console.log(this.state.data)
     return (
     	<div>
     	<DocumentMeta {...meta} />
     	  {this.props.children || <BlogItemDetailsDashboard data={this.state.data} topic={this.props.params.topic} stitle={this.props.params.stitle} />}
    	  		
-    	  <div id="background"> {contents}</div>
+    	
     	
     	</div>
  

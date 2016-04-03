@@ -117,8 +117,8 @@ webpackJsonp([6],{
 
 				if (Object.keys(this.props.params).length === 1) {
 
-					this.loadajax('/en_US_programming_blog.json', false);
-					this.loadajax('/www/' + site + '/blog/' + topic + '/' + topic + '.json', true);
+					this.loadajax('/ru_RU_finland_blog.json', false);
+					//			 this.loadajax('/www/'+site+'/blog/'+topic+'/'+topic+'.json',true)
 				}
 			}
 		}, {
@@ -143,8 +143,8 @@ webpackJsonp([6],{
 
 					if (Object.keys(this.props.params).length === 1) {
 
-						this.loadajax('/en_US_programming_blog.json', false);
-						this.loadajax('/www/' + site + '/blog/' + topic + '/' + topic + '.json', true);
+						this.loadajax('/ru_RU_finland_blog.json', false);
+						//					 this.loadajax('/www/'+site+'/blog/'+topic+'/'+topic+'.json',true)
 					}
 				}
 			}
@@ -162,7 +162,7 @@ webpackJsonp([6],{
 					description: topic + " index"
 				};
 
-				var contents = this.state.mark.Contents;
+				//	var contents = this.state.mark.Contents
 				//	console.log(this.state.data)
 				return _react2.default.createElement(
 					'div',
@@ -173,13 +173,7 @@ webpackJsonp([6],{
 						null,
 						this.props.params.topic
 					),
-					this.props.children || _react2.default.createElement(_BlogItemsDashboard2.default, { data: this.state.data, topic: this.props.params.topic }),
-					_react2.default.createElement(
-						'div',
-						{ id: 'background' },
-						' ',
-						contents
-					)
+					this.props.children || _react2.default.createElement(_BlogItemsDashboard2.default, { data: this.state.data, topic: this.props.params.topic })
 				);
 			}
 		}]);

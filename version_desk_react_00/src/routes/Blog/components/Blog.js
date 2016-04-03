@@ -123,7 +123,7 @@ class Blog extends React.Component {
 	 } 
   render() {
 	  
-	var contents = this.state.mark.Contents
+//	var contents = this.state.mark.Contents
 
 	var meta ={}
 	meta = {
@@ -145,7 +145,7 @@ class Blog extends React.Component {
     	      </Well>
     	      
     	  		</div>
-    	  		<div id="background"> {contents}</div>
+    	  		
     	
     	</div>
  
