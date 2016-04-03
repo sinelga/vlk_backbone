@@ -109,7 +109,7 @@ class BlogItemDetails extends React.Component {
 
 		   if (newId !== oldId) {
 			   
-			   this.loadajax('/www/'+site+'/blog/'+topic+'/'+stitle+'/'+stitle+'.html.json',true)
+//			   this.loadajax('/www/'+site+'/blog/'+topic+'/'+stitle+'/'+stitle+'.html.json',true)
 			   
 			   
 		   }

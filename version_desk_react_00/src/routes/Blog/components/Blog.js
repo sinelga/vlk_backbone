@@ -4,7 +4,9 @@ import { browserHistory,Link } from 'react-router'
 import ReactDOM from 'react-dom'
 //import StarRating from 'react-star-rating'
 import DocumentMeta from 'react-document-meta'
+import BlogHead from './BlogHead'
 import BlogDashboard from './BlogDashboard'
+
 
 
 const dark = 'hsl(200, 20%, 20%)'
@@ -134,19 +136,16 @@ class Blog extends React.Component {
     return (
     	<div>
     	<DocumentMeta {...meta} />
-    	      <div style={styles.wrapper}> 
+    
     	      <Well>
+    	      	<BlogHead />
     	      
-    	      	<Button onClick={this.handleReturn} bsStyle="primary" bsSize="large" className='pull-right'>Return</Button>
-    	      	<h2>БЛОГ</h2>
-    	           
+    	      	<Button onClick={this.handleReturn} bsStyle="primary" bsSize="large" className='pull-right'>Возврат</Button>
+    	      	   	           
     	      	{this.props.children || <BlogDashboard data={this.state.data} />}
     	      
     	      </Well>
-    	      
-    	  		</div>
-    	  		
-    	
+   	
     	</div>
  
     )

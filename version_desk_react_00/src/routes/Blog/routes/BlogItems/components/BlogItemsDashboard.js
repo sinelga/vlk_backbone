@@ -73,7 +73,7 @@ class BlogItemsDashboard extends React.Component {
     return (
       <div>
       <h3>{this.state.topic}</h3>
-      <h4>Items</h4>
+      <h4>Статьи:</h4>
       <Table responsive>
       	<tbody>
       	{htmlTableItems}
