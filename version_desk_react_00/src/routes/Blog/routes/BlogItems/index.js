@@ -1,5 +1,5 @@
 module.exports = {
-		  path: ':topic',
+		  path: ':stopic',
 		  
 				
 		  getChildRoutes(location, cb) {

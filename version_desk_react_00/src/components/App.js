@@ -29,7 +29,7 @@ class App extends React.Component {
 	
 	componentDidMount(){
 		
-		console.log("mount App ")
+//		console.log("mount App ")
 		
 				   
 	}

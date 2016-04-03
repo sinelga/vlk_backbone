@@ -66,7 +66,7 @@ class BlogDashboard extends React.Component {
 
     return (
       <div>
-      <h3>Index</h3>
+      <h3>Индекс</h3>
       <Table responsive>
       	<tbody>
       	{htmlTableItems}

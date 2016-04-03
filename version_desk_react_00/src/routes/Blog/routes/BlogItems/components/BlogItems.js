@@ -138,7 +138,7 @@ class BlogItems extends React.Component {
     	<DocumentMeta {...meta} />
     		<h2>{this.props.params.topic}</h2>
     	            	           
-    	      	{this.props.children || <BlogItemsDashboard data={this.state.data} topic={this.props.params.topic} />}
+    	      	{this.props.children || <BlogItemsDashboard data={this.state.data} stopic={this.props.params.stopic} />}
     	
     	</div>
  

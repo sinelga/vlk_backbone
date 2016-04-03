@@ -104,14 +104,14 @@ class Blog extends React.Component {
 		
 //		console.log("Blog componentDidUpdate",prevProps.params,this.props.params,Object.keys(this.props.params).length)
 		
-		   let oldId = prevProps.params.topic
-		   let newId = this.props.params.topic
+		   let oldId = prevProps.params.stopic
+		   let newId = this.props.params.stopic
 				   
 		   if (newId !== oldId) {   
 			 if (Object.keys(this.props.params).length === 0) {
 				 
-				 this.loadajax('/en_US_programming_blog.json',false)				 
-				 this.loadajax('/www/'+site+'/blog/blog.json',true)
+				 this.loadajax('/ru_RU_finland_blog.json',false)				 
+//				 this.loadajax('/www/'+site+'/blog/blog.json',true)
 					
 			   }							
 		}		
@@ -127,8 +127,8 @@ class Blog extends React.Component {
 
 	var meta ={}
 	meta = {
-		title: "Blog",
-		description: "Blog programming"
+		title: "БЛОГ",
+		description: "БЛОГ финляндия"
 	}
 
     return (
@@ -138,7 +138,7 @@ class Blog extends React.Component {
     	      <Well>
     	      
     	      	<Button onClick={this.handleReturn} bsStyle="primary" bsSize="large" className='pull-right'>Return</Button>
-    	      	<h2>BLOG</h2>
+    	      	<h2>БЛОГ</h2>
     	           
     	      	{this.props.children || <BlogDashboard data={this.state.data} />}
     	      

@@ -19,6 +19,7 @@ const dark = 'hsl(200, 20%, 20%)'
 	}
 
 var site =""
+var stopic =""	
 var topic =""
 var stitle=""
 var stitlesplit=""	
@@ -72,19 +73,19 @@ class BlogItemDetails extends React.Component {
 	}
 		
 	componentWillMount(){
-//		console.log("Willmount Details",this.props.params.id)
+//		console.log("Willmount Details",this.props.params.stopic)
 		site =document.domain
 		topic = this.props.params.topic
+		stopic = this.props.params.stopic
 		stitle = this.props.params.stitle
 		stitlesplit = this.props.params.stitle.split('.')[0]
 
 	}	
 	
 	componentDidMount(){
-//		console.log("Didmount blogItems",this.props.params)
 		
 		 this.loadajax('/ru_RU_finland_blog.json',false)			 
-		 this.loadajax('/www/'+site+'/blog/'+topic+'/'+stitlesplit+'/'+stitle+'.json',true)
+//		 this.loadajax('/www/'+site+'/blog/'+topic+'/'+stitlesplit+'/'+stitle+'.json',true)
 						
 	}
 
@@ -140,10 +141,8 @@ class BlogItemDetails extends React.Component {
     return (
     	<div>
     	<DocumentMeta {...meta} />
-    	  {this.props.children || <BlogItemDetailsDashboard data={this.state.data} topic={this.props.params.topic} stitle={this.props.params.stitle} />}
-   	  		
-    	
-    	
+    	  {this.props.children || <BlogItemDetailsDashboard data={this.state.data} stopic={this.props.params.stopic} stitle={this.props.params.stitle} />}
+
     	</div>
  
     )
