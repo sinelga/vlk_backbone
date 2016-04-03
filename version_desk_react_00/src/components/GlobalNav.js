@@ -47,6 +47,7 @@ class GlobalNav extends React.Component {
         <div style={{ float: 'left' }}>
           <Link to="/" style={styles.link}>Главная</Link>{' '}
           <Link to="/2" style={styles.link} activeStyle={styles.activeLink}>Контакт</Link>{' '}
+          <Link to="/blog" style={styles.link} activeStyle={styles.activeLink}>Блог</Link>{' '}
 
          
         </div>
