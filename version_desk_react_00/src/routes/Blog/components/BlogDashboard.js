@@ -53,7 +53,8 @@ class BlogDashboard extends React.Component {
 				  
 				  let itemObj = this.state.data[val]
 				  
-				  let visiblelink = itemObj[idx].Topic
+//				  console.log(itemObj)
+				  let visiblelink = itemObj[0].Topic
 				  let key = val
 				  let outlink = '/blog/'+val
 				  htmlTableItems.push(<tr key={key}><td><Link to={outlink}>{visiblelink}</Link></td></tr>) 
