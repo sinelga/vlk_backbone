@@ -124,8 +124,6 @@ class Blog extends React.Component {
 
 	 } 
   render() {
-	  
-//	var contents = this.state.mark.Contents
 
 	var meta ={}
 	meta = {

@@ -47,9 +47,6 @@ class BlogDashboard extends React.Component {
 		  if (Object.keys(this.state.data).length > 0) {
 			  
 			  Object.getOwnPropertyNames(this.state.data).forEach(function(val, idx, array) {
-//				  console.log(this.state.data[val]);
-//				  console.log(idx);
-//				  console.log(array);
 				  
 				  let itemObj = this.state.data[val]
 				  
