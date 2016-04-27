@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 484:
+/***/ 486:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11,7 +11,7 @@ webpackJsonp([4],{
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactBootstrap = __webpack_require__(218);
+	var _reactBootstrap = __webpack_require__(220);
 
 	var _reactRouter = __webpack_require__(160);
 
@@ -19,11 +19,11 @@ webpackJsonp([4],{
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _reactDocumentMeta = __webpack_require__(469);
+	var _reactDocumentMeta = __webpack_require__(471);
 
 	var _reactDocumentMeta2 = _interopRequireDefault(_reactDocumentMeta);
 
-	var _BlogItemsDashboard = __webpack_require__(485);
+	var _BlogItemsDashboard = __webpack_require__(487);
 
 	var _BlogItemsDashboard2 = _interopRequireDefault(_BlogItemsDashboard);
 
@@ -185,7 +185,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 485:
+/***/ 487:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -202,7 +202,7 @@ webpackJsonp([4],{
 
 	var _reactRouter = __webpack_require__(160);
 
-	var _reactBootstrap = __webpack_require__(218);
+	var _reactBootstrap = __webpack_require__(220);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

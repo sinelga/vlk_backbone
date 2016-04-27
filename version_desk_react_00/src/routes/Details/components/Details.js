@@ -7,8 +7,8 @@ import Firebase from 'firebase'
 
 //var baseRef = new Firebase('https://vlk-firebase.firebaseio.com');
 var baseRef = new Firebase('https://vlk-production.firebaseio.com');
-//var baseRefClients = new Firebase('https://vlk-clients.firebaseio.com');
-var baseRefClients = new Firebase('https://vlk-customers.firebaseio.com');
+var baseRefClients = new Firebase('https://vlk-clients.firebaseio.com');
+//var baseRefClients = new Firebase('https://vlk-customers.firebaseio.com');
 var id
 
 
@@ -67,7 +67,6 @@ class Details extends React.Component {
 	
 	componentDidMount(){		
 
-		console.log("componentDidMount details",this.props.params)
 		id = this.props.params.id
 		var obj = {}
 		baseRef.orderByChild("id").equalTo(id).on("value", function(snapshot) {
@@ -147,11 +146,6 @@ class Details extends React.Component {
 	  var data = this.state.data
 	  var imgactivity = "/img/activity/"+data.id+".jpg"
 
-//	  
-//	  const meta = {
-//		      title: "data.Moto",
-//	}
-//	  
 	  var alarm = []
 	  if (this.state.alertVisible) {
 		   
@@ -160,7 +154,7 @@ class Details extends React.Component {
 	  }
 	  if (this.state.contactInserted) {
 		   
-		  alarm.push(<Alert bsStyle="danger" onDismiss={this.handleContactNotInserted} dismissAfter={4000}>Ваши данные успешно введены!</Alert>)
+		  alarm.push(<Alert bsStyle="danger" onDismiss={this.handleContactNotInserted} dismissAfter={4000}>Ваши данные успешно сохранены!</Alert>)
 		  
 	  }	  
 	  
@@ -184,15 +178,12 @@ class Details extends React.Component {
       		<Input type="email" label="Е-маил" value={this.state.email} onChange={this.handleEmailChange} placeholder="Введите Е-маил" />
       		<Input type="phone" label="Телефон" value={this.state.phone} onChange={this.handlePhoneChange}  placeholder="Введите Телефон" />
       		<Input type="textarea" label="Техт вашего сообщения" value={this.state.info} onChange={this.handleInfoChange} placeholder="Техт вашего сообщения" />		
-      		<ButtonInput bsStyle="primary" onClick={this.handleSubmit} value="Введите данные" />      		
+      		<ButtonInput bsStyle="primary" onClick={this.handleSubmit} value="Отправить данные" />      		
       	</form>
     	
     	</Col>
     </Row>
-      
-      
-
-  		   	
+        		   	
       </div>
     )
   }
